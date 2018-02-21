@@ -4,23 +4,22 @@
         <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">
             <div class="filter"></div>
         </div>
-        <div class="section profile-content">
+        <p *ngIf="!user"><em>Loading...</em></p>
+        <div class="section profile-content" *ngIf="user">
             <div class="container">
                 <div class="owner">
                     <div class="avatar">
                         <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
+                        <h4 class="title">{{user.firstName}} {{user.lastName}}<br /></h4>
                         <div class="row" fxLayout="row" fxLayoutAlign="center">
                            
-                            <button type="button" class="btn btn-info btn-round"><i class="fa fa-check"></i>Software Developement</button>
-                            <button type="button" class="btn btn-success btn-round"><i class="fa fa-check"></i>Music</button>
-                            <button type="button" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Accounting</button>
+                            <button type="button" class="btn btn-info btn-round" *ngFor="let expertise of user.expertise"><i class="fa fa-check"></i>{{expertise}}</button>
                 
                     </div>
                     <br />
-                        <h6 class="description">Music Producer</h6>
+                        <h6 class="description">{{user.description}}</h6>
                     </div>
                 </div>
                 <div class="row">
@@ -39,7 +38,7 @@
                 <div class="col-sm-3">
                     <div class="rating-block">
                         <h4>Average user rating</h4>
-                        <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                        <h2 class="bold padding-bottom-7" *ngIf="avgRating">{{avgRating}} <p *ngIf="!avgRating"><em>Loading...</em></p><small>/ 5</small></h2>
                         <button type="button" class="btn btn-success btn-sm" aria-label="Left Align">
                           <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
@@ -132,20 +131,14 @@
 			<div class="col-sm-7">
 				<hr/>
 				<div class="review-block">
-					<div class="row">
+					<div class="row" *ngFor="let rating of user.ratings">
 						<div class="col-sm-3">
 							<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-							<div class="review-block-name"><a href="#">nktailor</a></div>
-							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+							<div class="review-block-name"><a href="#">{{rating.rater.firstName}} {{rating.rater.lastName}}</a></div>
+							<div class="review-block-date">{{rating.dateCreated}}<br/>1 day ago</div>
 						</div>
 						<div class="col-sm-9">
 							<div class="review-block-rate">
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="fa fa-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="fa fa-star" aria-hidden="true"></span>
-								</button>
 								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
 								  <span class="fa fa-star" aria-hidden="true"></span>
 								</button>
@@ -156,67 +149,9 @@
 								  <span class="fa fa-star" aria-hidden="true"></span>
 								</button>
 							</div>
-							<div class="review-block-title">this was nice in buy</div>
-							<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+							<div class="review-block-description">{{rating.comment}}</div>
 						</div>
-					</div>
-					<hr/>
-					<div class="row">
-						<div class="col-sm-3">
-							<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-							<div class="review-block-name"><a href="#">nktailor</a></div>
-							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-						</div>
-						<div class="col-sm-9">
-							<div class="review-block-rate">
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-							</div>
-							<div class="review-block-title">this was nice in buy</div>
-							<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-						</div>
-					</div>
-					<hr/>
-					<div class="row">
-						<div class="col-sm-3">
-							<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-							<div class="review-block-name"><a href="#">nktailor</a></div>
-							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-						</div>
-						<div class="col-sm-9">
-							<div class="review-block-rate">
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-								</button>
-							</div>
-							<div class="review-block-title">this was nice in buy</div>
-							<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-						</div>
+                        <hr/>
 					</div>
 				</div>
 			</div>

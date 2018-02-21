@@ -19,6 +19,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,16 @@ import { HomeModule } from './home/home.module';
     RouterModule,
     AppRoutingModule,
     FlexLayoutModule,
-    HomeModule
+    HomeModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+      { provide: 'BASE_URL', useFactory: getBaseUrl}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function getBaseUrl() {
+  return 'http://localhost:63829'
+}
