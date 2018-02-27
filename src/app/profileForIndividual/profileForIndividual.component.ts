@@ -1,6 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Response} from '@angular/http';
 import {User} from '../models/user.model';
+import {RatingBreakdown} from '../models/rating-breakdown.model';
+import {UserService} from '../Services/user.service';
 
 @Component({
     selector: 'app-profile',
@@ -9,28 +11,24 @@ import {User} from '../models/user.model';
 })
 
 export class ProfileForIndividualComponent implements OnInit {
-    public user: User;
+    public user;
     public avgRating: number;
+    public breakdown: RatingBreakdown;
 
-    constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + '/api/values').subscribe(result => {
-            this.user = result.json() as User;
-            this.avgRating = this.GetAverageRating();
-            console.log(this.user);
-        }, error => console.error(error));
+    constructor(private userService: UserService) {
+        console.log('const hit');
+        this.userService.getUserDetails().subscribe(
+            (resp: Response) => {
+                this.user = resp;
+                console.log(this.user);
+                this.avgRating = this.userService.getUserAverageRating(this.user);
+                this.breakdown = new RatingBreakdown();
+                this.breakdown.SetCountsAndPercentages(this.user);
+            }
+        );
     }
 
-    ngOnInit() {}
-
-    GetAverageRating() {
-        let avg: number;
-        let total = 0;
-
-        for (let ratingItem of this.user.ratings){
-            total += ratingItem.ratingInt;
-        }
-
-        avg = total / this.user.ratings.length;
-        return avg;
+    ngOnInit() {
+        console.log('ngInit hit');
     }
 }

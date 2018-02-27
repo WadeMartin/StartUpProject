@@ -9,5 +9,12 @@ export class User {
     public profilePic: string;
     public cvDocument: string;
     public expertise: string[];
-    public ratings: Rating[];
+    public ratings: Array<Rating>;
+    public fullName: string;
+
+    constructor() { }
+
+    getFullName() {
+        return 'lol';
+    }
 }

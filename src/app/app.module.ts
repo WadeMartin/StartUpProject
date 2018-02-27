@@ -20,6 +20,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import {HttpModule} from '@angular/http';
+import {UserService} from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {HttpModule} from '@angular/http';
     HttpModule
   ],
   providers: [
+      UserService,
       { provide: 'BASE_URL', useFactory: getBaseUrl}
   ],
   bootstrap: [AppComponent]
