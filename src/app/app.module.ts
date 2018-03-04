@@ -9,32 +9,35 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
-import { startUpProfileComponent } from './startUpProfile/startUpProfile.component';
-import { userProfileEditComponent } from './userProfileEdit/userProfileEdit.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProfileForIndividualComponent } from './profileForIndividual/profileForIndividual.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import {HttpModule} from '@angular/http';
-import {UserService} from './Services/user.service';
+import {UserService} from './services/user.service';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
+import { StartupProfileComponent } from './startup-profile/startup-profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    userProfileEditComponent,
-    ProfileForIndividualComponent,
-    startUpProfileComponent,
+    UserProfileComponent,
+    IndividualProfileComponent,
+    StartupProfileComponent,
     SignupComponent,
     LandingComponent,
     SearchComponent,
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    SignInComponent
+    SignInComponent,
+    IndividualProfileComponent,
+    StartupProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

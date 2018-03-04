@@ -1,16 +1,14 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {Http, Response} from '@angular/http';
-import {User} from '../models/user.model';
+import { Component, OnInit } from '@angular/core';
 import {RatingBreakdown} from '../models/rating-breakdown.model';
-import {UserService} from '../Services/user.service';
+import {Response} from '@angular/http';
+import {UserService} from '../services/user.service';
 
 @Component({
-    selector: 'app-profile',
-    templateUrl: './profileForIndividual.component.html',
-    styleUrls: ['./profileForIndividual.component.scss']
+  selector: 'app-individual-profile',
+  templateUrl: './individual-profile.component.html',
+  styleUrls: ['./individual-profile.component.scss']
 })
-
-export class ProfileForIndividualComponent implements OnInit {
+export class IndividualProfileComponent implements OnInit {
     public user;
     public avgRating: number;
     public breakdown: RatingBreakdown;
