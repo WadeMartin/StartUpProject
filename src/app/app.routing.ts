@@ -14,17 +14,17 @@ import {StartupProfileComponent} from './startup-profile/startup-profile.compone
 import {IndividualProfileComponent} from './individual-profile/individual-profile.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 
-const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
+const routes: Routes = [
+    { path: 'home',                 component: HomeComponent },
     { path: 'start-up',             component: StartupProfileComponent },
-    { path: 'user-profile-edit',             component: UserProfileComponent },
-    { path: 'profile',     component: ProfileComponent },
-    { path: 'user-profile',     component: IndividualProfileComponent },
-    { path: 'search',     component: SearchComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'signin',           component: SignInComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent },
+    { path: 'user-profile-edit',    component: UserProfileComponent },
+    { path: 'profile',              component: ProfileComponent },
+    { path: 'user-profile',         component: IndividualProfileComponent },
+    { path: 'search',               component: SearchComponent },
+    { path: 'signup',               component: SignupComponent },
+    { path: 'signin',               component: SignInComponent },
+    { path: 'landing',              component: LandingComponent },
+    { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
