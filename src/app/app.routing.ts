@@ -12,6 +12,7 @@ import { LandingComponent } from './landing/landing.component';
 import { userProfileEditComponent } from './userProfileEdit/userProfileEdit.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { ProfileForIndividualComponent } from './profileForIndividual/profileForIndividual.component';
+import {SignInComponent} from './sign-in/sign-in.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes =[
     { path: 'user-profile',     component: ProfileForIndividualComponent },
     { path: 'search',     component: SearchComponent },
     { path: 'signup',           component: SignupComponent },
+    { path: 'signin',           component: SignInComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }

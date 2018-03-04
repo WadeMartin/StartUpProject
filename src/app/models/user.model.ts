@@ -14,7 +14,4 @@ export class User {
 
     constructor() { }
 
-    getFullName() {
-        return 'lol';
-    }
 }

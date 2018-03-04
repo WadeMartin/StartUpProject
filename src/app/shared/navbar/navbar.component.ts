@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {Component, OnInit, ElementRef, Output, EventEmitter} from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @Component({
@@ -9,6 +9,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
+    @Output() selectedPage = new EventEmitter<string>();
 
     constructor(public location: Location, private element : ElementRef) {
         this.sidebarVisible = false;

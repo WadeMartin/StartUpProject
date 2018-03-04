@@ -30,4 +30,8 @@ export class UserService {
         }
         return avg;
     }
+
+    getFullName(user: User) {
+        return user.firstName + ' ' + user.lastName;
+    }
 }

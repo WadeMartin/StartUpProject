@@ -17,10 +17,10 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
 import { HomeModule } from './home/home.module';
 import {HttpModule} from '@angular/http';
 import {UserService} from './Services/user.service';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import {UserService} from './Services/user.service';
     SearchComponent,
     ProfileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

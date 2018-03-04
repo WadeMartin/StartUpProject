@@ -20,6 +20,7 @@ export class ProfileForIndividualComponent implements OnInit {
         this.userService.getUserDetails().subscribe(
             (resp: Response) => {
                 this.user = resp;
+                this.user.fullName = this.userService.getFullName(this.user);
                 console.log(this.user);
                 this.avgRating = this.userService.getUserAverageRating(this.user);
                 this.breakdown = new RatingBreakdown();

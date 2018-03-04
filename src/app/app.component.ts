@@ -14,6 +14,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
+    loadedPage = 'home';
 
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
@@ -59,5 +60,9 @@ export class AppComponent implements OnInit {
         else {
             return true;
         }
+    }
+
+    onNavigate(page: string) {
+        this.loadedPage = page;
     }
 }
