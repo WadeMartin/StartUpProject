@@ -18,7 +18,24 @@ export class RatingBreakdown {
     SetCountsAndPercentages(user: User) {
         const ratingCount = user.ratings.length;
 
+        // Five
         this.fiveStarCount = user.ratings.filter(x => x.ratingInt === 5).length;
         this.fiveStarPercentage = (this.fiveStarCount / ratingCount) * 100;
+
+        // Four
+        this.fourStarCount = user.ratings.filter(x => x.ratingInt === 4).length;
+        this.fourStarPercentage = (this.fourStarCount / ratingCount) * 100;
+
+        // Three
+        this.threeStarCount = user.ratings.filter(x => x.ratingInt === 3).length;
+        this.threeStarPercentage = (this.threeStarCount / ratingCount) * 100;
+
+        // Two
+        this.twoStarCount = user.ratings.filter(x => x.ratingInt === 2).length;
+        this.twoStarPercentage = (this.twoStarCount / ratingCount) * 100;
+
+        // One
+        this.oneStarCount = user.ratings.filter(x => x.ratingInt === 1).length;
+        this.oneStarPercentage = (this.oneStarCount / ratingCount) * 100;
     }
 }

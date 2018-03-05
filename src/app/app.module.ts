@@ -21,6 +21,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
 import { StartupProfileComponent } from './startup-profile/startup-profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {CompanyService} from './services/company.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   ],
   providers: [
       UserService,
+      CompanyService,
       { provide: 'BASE_URL', useFactory: getBaseUrl}
   ],
   bootstrap: [AppComponent]
@@ -58,5 +60,5 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 export class AppModule { }
 
 export function getBaseUrl() {
-  return 'http://localhost:63829'
+  return 'http://localhost:63830'
 }
