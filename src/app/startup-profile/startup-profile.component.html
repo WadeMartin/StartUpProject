@@ -8,7 +8,7 @@
     <div class="container">
       <div class="owner">
         <div class="avatar">
-          <img src="{{company.logoLoc}}" alt="{{company.companyName}}" class="img-circle img-no-padding img-responsive">
+          <img src="{{company.logoLoc}}" alt="{{company.companyName}}" class="img-thumbnail img-no-padding img-responsive">
         </div>
         <div class="name">
           <h4 class="title">{{company.companyName}}<br /></h4>
@@ -24,6 +24,30 @@
           <p>An artist of considerable range, Jane Faker â€” the name taken by Melbourne-raised, Brooklyn-based Nick Murphy â€” writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
           <br />
 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Photos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Videos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="my-tab-content" class="tab-content text-center">
+            <div class="tab-pane active" id="home" role="tabpanel"><p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p></div>
+            <div class="tab-pane" id="profile" role="tabpanel"><p>Here is your profile.</p></div>
+            <div class="tab-pane" id="messages" role="tabpanel"><p>Here are your messages.</p></div>
+          </div>
         </div>
       </div>
       <br/>

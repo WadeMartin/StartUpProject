@@ -22,6 +22,7 @@ import { IndividualProfileComponent } from './individual-profile/individual-prof
 import { StartupProfileComponent } from './startup-profile/startup-profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {CompanyService} from './services/company.service';
+import {SubscriptionService} from './services/subscription.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {CompanyService} from './services/company.service';
   providers: [
       UserService,
       CompanyService,
+      SubscriptionService,
       { provide: 'BASE_URL', useFactory: getBaseUrl}
   ],
   bootstrap: [AppComponent]

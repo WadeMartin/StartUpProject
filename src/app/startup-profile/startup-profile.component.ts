@@ -13,7 +13,8 @@ export class StartupProfileComponent implements OnInit {
   constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
-    this.company = this.companyService.getCompanies()[0];
+    // this.company = this.companyService.getCompanies()[0];
+      this.company = new Company();
   }
 
 }
